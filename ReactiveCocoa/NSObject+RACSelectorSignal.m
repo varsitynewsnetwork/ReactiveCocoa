@@ -47,6 +47,7 @@ static BOOL RACForwardInvocation(id self, NSInvocation *invocation) {
 	BOOL respondsToAlias = [class instancesRespondToSelector:aliasSelector];
 	if (respondsToAlias) {
 		invocation.selector = aliasSelector;
+		NSLog("invocation: #{invocation.inspect});
 		[invocation invoke];
 	}
 
